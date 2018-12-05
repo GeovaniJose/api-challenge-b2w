@@ -17,10 +17,6 @@
   `GET` /planets/:id
 
   `DELETE` /planets/:id
-
-* **Method:**
-
-  `GET`
   
 *  **URL Params**
 
