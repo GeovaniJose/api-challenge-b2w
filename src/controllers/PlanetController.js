@@ -9,6 +9,10 @@ module.exports = {
     try {
       const arrayPlanet = await api.get(`/planets/?search=${req.body.name}`)
 
+      if (arrayPlanet.data.results === null) {
+        return res.status(400).send('There was an error adding the planets.')
+      }
+
       const arrayFilms = arrayPlanet.data.results[0]
 
       const films = arrayFilms.films.length
