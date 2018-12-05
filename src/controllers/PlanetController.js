@@ -7,11 +7,11 @@ const Planet = mongoose.model('Planet')
 module.exports = {
   async add (req, res) {
     try {
-      const arrayPlanet = await api.get(`planets/?search=${req.body.name}`)
+      const arrayPlanet = await api.get(`/planets/?search=${req.body.name}`)
 
-      const arrayFilms = arrayPlanet.results[0]
+      const arrayFilms = arrayPlanet.data.results[0]
 
-      const films = arrayFilms.films.length()
+      const films = arrayFilms.films.length
 
       req.body = { films, ...req.body }
 
@@ -37,7 +37,7 @@ module.exports = {
 
   async readByName (req, res) {
     try {
-      const planet = await Planet.find({ name: req.params.id })
+      const planet = await Planet.find({ name: req.params.name })
 
       return res.status(200).json(planet)
     } catch (err) {
