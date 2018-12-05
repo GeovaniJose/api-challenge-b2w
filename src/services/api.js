@@ -1,5 +1,5 @@
-import axios from 'axios'
+const axios = require('axios')
 
 const api = axios.create({ baseURL: 'https://swapi.co/api' })
 
-export default api
+module.exports = api
