@@ -10,7 +10,7 @@ app.use(cors())
 
 // Iniciando o DB
 mongoose.connect(
-  process.env.MONGOLAB_URI,
+  'mongodb://localhost:27017/challenge-b2w-db',
   { useNewUrlParser: true }
 )
 requireDir('./src/models')
