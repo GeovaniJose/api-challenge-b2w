@@ -13,11 +13,11 @@ module.exports = {
         return res.status(400).send('There was an error adding the planets.')
       }
 
-      const arrayFilms = arrayPlanet.data.results[0]
+      const { films, population } = arrayPlanet.data.results[0]
 
-      const films = arrayFilms.films.length
+      req.body = { population, films: films.length, ...req.body }
 
-      req.body = { films, ...req.body }
+      console.log('body', req.body)
 
       const planet = await Planet.create(req.body)
 

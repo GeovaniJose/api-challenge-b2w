@@ -14,6 +14,9 @@ const PlanetSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  population: {
+    type: String
+  },
   films: {
     type: Number,
     default: 0
