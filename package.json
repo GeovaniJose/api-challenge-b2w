@@ -12,7 +12,7 @@
   "author": "Geovani José da Silva",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "mongoose": "^5.3.14",
